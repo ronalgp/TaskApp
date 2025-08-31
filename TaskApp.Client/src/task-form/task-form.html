@@ -1,0 +1,62 @@
+    <div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-lightly py-3">
+                    <h3 class="card-tit" mb-0 fw-semibold>
+                        {{editMode ? "Edit" : "Add"}} Task
+                    </h3>
+                </div>
+
+                <div class="card-body p-4">
+                    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+                        <!-- Title -->
+                        <div class="mb-4">
+                            <label for="title" class="form-label fw-medium">Title</label>
+                            <div class="input-group">
+                                <input formControlName="title" id="title"
+                                    class="form-control form-control-lg">
+                            </div>
+                        </div>
+                        <!-- Description -->
+                        <div class="mb-4">
+                            <label for="description" class="form-label fw-medium">Description</label>
+                            <div class="input-group">
+                                <input formControlName="description" id="description"
+                                    class="form-control form-control-lg">
+                            </div>
+                        </div>
+                        <!-- Due date -->
+                        <div class="mb-4">
+                            <label for="dueDate" class="form-label fw-medium">Due date</label>
+                            <div class="input-group">
+                                <input formControlName="dueDate" id="dueDate" type="date"
+                                    class="form-control form-control-lg">
+                            </div>
+                        </div>
+                        <!-- Status Type -->
+                        <div class="mb-4">
+                            <label for="type" class="form-label fw-medium">Status</label>
+                            <select formControlName="status" id="status" class="form-select form-select-lg">
+                                <option value="Ready">Ready</option>
+                                <option value="InProgress">In Progress</option>
+                                <option value="OnHold">On Hold</option>
+                                <option value="Review">Review</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Closed">Closed</option>
+                            </select>
+                        </div>
+                        <!-- Task Cancel and Submit Buttons -->
+                        <div class="d-flex gap-3 justify-content-end mt-4">
+                            <button type="button" class="btn btn-light btn-lg px-4" (click)="cancel()">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-lg px-4"
+                                [disabled]="!taskForm.valid">
+                                {{editMode ? "Update" : "Save"}} Task
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
