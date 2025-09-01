@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { TaskService } from '../services/task-service';
+import { TaskService } from '../../services/task-service';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Taskdetails } from '../models/taskdetails';
+import { Taskdetails } from '../../models/taskdetails';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({

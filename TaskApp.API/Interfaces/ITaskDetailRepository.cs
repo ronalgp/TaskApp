@@ -1,6 +1,6 @@
 using TaskApp.API.Models;
 
-namespace TaskApp.API.Repositories;
+namespace TaskApp.API.Interfaces;
 
 public interface ITaskDetailRepository
 {

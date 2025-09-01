@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using TaskApp.API.Interfaces;
 using TaskApp.API.Models;
-using TaskApp.API.Repositories;
 
 namespace TaskApp.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TaskController(ITaskDetailRepository taskDetailRepository) : ControllerBase
+    public class TaskController(ITaskDetailRepository taskDetailRepository) : BaseController
     {
         [HttpGet]
         public IActionResult GetTasks()

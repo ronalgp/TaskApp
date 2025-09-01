@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TaskService } from '../services/task-service';
+import { TaskService } from '../../services/task-service';
 
 @Component({
   selector: 'app-task-form',
