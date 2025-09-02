@@ -72,7 +72,7 @@ export class TaskForm implements OnInit {
         console.log("Task updated : ", task);
         this.taskService.update(task.id, task).subscribe({
           next: () =>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/task']);
           },
           error: (err) => {
             console.log("Error updating task: ", err);
@@ -81,7 +81,7 @@ export class TaskForm implements OnInit {
       } else {
         this.taskService.create(task).subscribe({
           next: () =>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/task']);
           },
           error: (err) => {
             console.log("Error adding task: ", err);

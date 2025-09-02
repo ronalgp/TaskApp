@@ -2,7 +2,7 @@ namespace TaskApp.API.Models.Base;
 
 public class BaseEntities
 {
-    public string Id { get; set; } = null!;
+    public int Id { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 }

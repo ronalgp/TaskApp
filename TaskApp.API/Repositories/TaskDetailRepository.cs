@@ -6,8 +6,9 @@ namespace TaskApp.API.Repositories;
 
 public class TaskDetailRepository(AppDbContext context) : ITaskDetailRepository
 {
-    public void CreateTask(TaskDetails task)
+    public void CreateTask(TaskDetails task, int userId)
     {
+        task.UserId = userId;
         context.Tasks.Add(task);
         context.SaveChanges();
     }
@@ -22,9 +23,9 @@ public class TaskDetailRepository(AppDbContext context) : ITaskDetailRepository
         }
     }
 
-    public IEnumerable<TaskDetails> GetAllTasks()
+    public IEnumerable<TaskDetails> GetAllTasks(int userId)
     {
-        return context.Tasks.ToList();
+        return context.Tasks.Where(x => x.UserId == userId).ToList();
     }
 
     public TaskDetails? GetTaskById(int id)

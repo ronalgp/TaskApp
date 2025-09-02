@@ -8,7 +8,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "skipTests": true,
-          "path": "src"
+          "path": "src/components"
         },
         "@schematics/angular:service": {
           "skipTests": true,
@@ -17,6 +17,10 @@
         "@schematics/angular:class": {
           "skipTests": true,
           "path": "src/models"
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true,
+          "path": "src/interceptor"
         }
       },
       "root": "",

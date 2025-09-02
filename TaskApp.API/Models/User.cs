@@ -1,8 +1,9 @@
+using TaskApp.API.Models.Base;
+
 namespace TaskApp.API.Models;
 
-public class User
+public class User: BaseEntities
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
     public string Name { get; set; } = string.Empty;
     public required string Email { get; set; }
     public required byte[] HashPassword { get; set; }
